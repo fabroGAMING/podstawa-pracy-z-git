@@ -20,6 +20,17 @@ if [[ "$1" == "--logs" || "$1" == "-l" ]]; then
     done
 fi
 
+if [[ "$1" == "--init" ]]; then
+    repo_url=$(git config --get remote.origin.url)
+    if [[ -z "$repo_url" ]]; then
+        echo "Nie znaleziono adresu repozytorium git w bieżącym katalogu."
+        exit 1
+    fi
+    git clone "$repo_url" .
+    export PATH="$PWD:$PATH"
+    echo "Repozytorium sklonowane do $(pwd) i dodane do PATH."
+fi
+
 if [[ "$1" == "--help" || "$1" == "-h" ]]; then
     echo "Dostępne opcje:"
     echo "  --date        Wyświetla dzisiejszą datę"
