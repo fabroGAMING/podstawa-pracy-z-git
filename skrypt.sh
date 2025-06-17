@@ -48,5 +48,7 @@ if [[ "$1" == "--help" || "$1" == "-h" ]]; then
     echo "Dostępne opcje:"
     echo "  --date, -d        Wyświetla dzisiejszą datę"
     echo "  --logs [N], -l    Tworzy N plików log (domyślnie 100)"
+    echo "  --init            Klonuje repozytorium git i dodaje do PATH"
+    echo "  --error [N], -e   Tworzy N plików i folderów error (domyślnie 100)"
     echo "  --help, -h        Wyświetla tę pomoc"
 fi
