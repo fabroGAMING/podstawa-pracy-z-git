@@ -46,7 +46,7 @@ fi
 
 if [[ "$1" == "--help" || "$1" == "-h" ]]; then
     echo "Dostępne opcje:"
-    echo "  --date        Wyświetla dzisiejszą datę"
-    echo "  --logs [N]    Tworzy N plików log (domyślnie 100)"
-    echo "  --help        Wyświetla tę pomoc"
+    echo "  --date, -d        Wyświetla dzisiejszą datę"
+    echo "  --logs [N], -l    Tworzy N plików log (domyślnie 100)"
+    echo "  --help, -h        Wyświetla tę pomoc"
 fi
