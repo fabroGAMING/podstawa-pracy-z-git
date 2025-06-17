@@ -19,3 +19,10 @@ if [[ "$1" == "--logs" ]]; then
         echo -e "Nazwa pliku: $filename\nNazwa skryptu: $(basename "$0")\nData utworzenia: $(date)" > "$filename"
     done
 fi
+
+if [[ "$1" == "--help" ]]; then
+    echo "Dostępne opcje:"
+    echo "  --date        Wyświetla dzisiejszą datę"
+    echo "  --logs [N]    Tworzy N plików log (domyślnie 100)"
+    echo "  --help        Wyświetla tę pomoc"
+fi
