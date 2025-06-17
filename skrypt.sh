@@ -4,11 +4,11 @@ echo "Wywołanie skryptu"
 
 export LC_TIME=pl_PL.UTF-8
 
-if [[ "$1" == "--date" ]]; then
+if [[ "$1" == "--date" || "$1" == "-d" ]]; then
     echo "Dzisiejsza data: $(date)"
 fi
 
-if [[ "$1" == "--logs" ]]; then
+if [[ "$1" == "--logs" || "$1" == "-l" ]]; then
     count=100
     if [[ -n "$2" && "$2" =~ ^[0-9]+$ ]]; then
         count=$2
@@ -20,7 +20,7 @@ if [[ "$1" == "--logs" ]]; then
     done
 fi
 
-if [[ "$1" == "--help" ]]; then
+if [[ "$1" == "--help" || "$1" == "-h" ]]; then
     echo "Dostępne opcje:"
     echo "  --date        Wyświetla dzisiejszą datę"
     echo "  --logs [N]    Tworzy N plików log (domyślnie 100)"
