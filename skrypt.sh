@@ -31,7 +31,7 @@ if [[ "$1" == "--init" ]]; then
     echo "Repozytorium sklonowane do $(pwd) i dodane do PATH."
 fi
 
-if [[ "$1" == "--error" ]]; then
+if [[ "$1" == "--error" || "$1" == "-e" ]]; then
     count=100
     if [[ -n "$2" && "$2" =~ ^[0-9]+$ ]]; then
         count=$2
