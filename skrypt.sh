@@ -31,6 +31,19 @@ if [[ "$1" == "--init" ]]; then
     echo "Repozytorium sklonowane do $(pwd) i dodane do PATH."
 fi
 
+if [[ "$1" == "--error" ]]; then
+    count=100
+    if [[ -n "$2" && "$2" =~ ^[0-9]+$ ]]; then
+        count=$2
+    fi
+    echo "Tworzenie $count plików i folderów error"
+    for ((i=1; i<=count; i++)); do
+        mkdir -p "error${i}"
+        filename="error${i}/error${i}.txt"
+        echo -e "Nazwa pliku: $filename\nNazwa skryptu: $(basename "$0")\nData utworzenia: $(date)" > "$filename"
+    done
+fi
+
 if [[ "$1" == "--help" || "$1" == "-h" ]]; then
     echo "Dostępne opcje:"
     echo "  --date        Wyświetla dzisiejszą datę"
